@@ -21,5 +21,12 @@ df = df.drop(columns = deleted_columns)
 # Univariate Analysis Reduced (less missing values)
 df.describe().to_csv("UnivariateAnalysisReduced.csv")
 # New Dataset with the missing values (columns) removed
-df.to_csv("all_snps_cancers_reduced.csv")
+for i in df:
+	for j in df[i]:
+		if (j == "NaN" or j == "" or j == []):
+			j = np.nan
+#imp = SimpleImputer(missing_values = np.nan, strategy = "mean")
+#imp.fit_transform(df)
+df_beta = df.fillna(df.mean())
+df_beta.to_csv("all_snps_cancers_reduced.csv", index = False)
                    	

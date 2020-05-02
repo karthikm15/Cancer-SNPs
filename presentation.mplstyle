@@ -1,0 +1,4 @@
+axes.spines.top: False
+axes.spines.right: False
+xtick.top: False
+ytick.right: False

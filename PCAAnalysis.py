@@ -10,7 +10,7 @@ from sklearn.impute import SimpleImputer
 import numpy as np
 
 
-
+pdb.set_trace()
 df = pd.read_csv('all_snps_cancers_reduced.csv')
 SNP = df['SNP']
 x = StandardScaler().fit_transform(df.iloc[:,1:].values)

@@ -20,6 +20,7 @@ data_columns_extracted = data[columns_to_extract]
 # Creates a table with the different clusters (represents the dendogram)
 Z = hierarchy.linkage(data_columns_extracted, 'complete')
 # Graphical representation of the dendogram
+pdb.set_trace()
 dn = hierarchy.dendrogram(Z)
 
 plt.show()

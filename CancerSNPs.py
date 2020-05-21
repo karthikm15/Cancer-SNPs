@@ -10,7 +10,7 @@ from sklearn.decomposition import PCA
 # loading the csv file into a dataframe
 df = pd.read_csv('all_snps_cancers.csv')
 # first step of data exploration
-df.describe().to_csv('UnivariateAnalysis.csv') 
+df.describe().to_csv('Univariate_Analysis.csv') 
 # deleting the columns with high missing values
 deleted_columns = ['beta.Lung adenocarcinoma', 'se.Lung adenocarcinoma', 
                    'pval.Lung adenocarcinoma', 'beta.Cancer of urinary tract', 
@@ -19,7 +19,7 @@ deleted_columns = ['beta.Lung adenocarcinoma', 'se.Lung adenocarcinoma',
                    'beta.Glioma', 'se.Glioma', 'pval.Glioma']
 df = df.drop(columns = deleted_columns)
 # Univariate Analysis Reduced (less missing values)
-df.describe().to_csv("UnivariateAnalysisReduced.csv")
+df.describe().to_csv("Univariate_Analysis_Reduced.csv")
 # New Dataset with the missing values (columns) removed
 for i in df:
 	for j in df[i]:

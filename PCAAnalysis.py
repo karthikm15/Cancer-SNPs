@@ -10,18 +10,17 @@ from sklearn.impute import SimpleImputer
 import numpy as np
 
 
-pdb.set_trace()
 df = pd.read_csv('all_snps_cancers_reduced.csv')
 SNP = df['SNP']
-x = StandardScaler().fit_transform(df.iloc[:,1:].values)
+x = df.iloc[:,1:].values
 #x = pd.DataFrame(x, columns = ['PC1', 'PC2', 'PC3', 'PC4', 'PC5', 'PC6', 'PC7', 'PC8', 'PC9', 'PC10', 'PC11', 'PC12', 'PC13', 'PC14', 'PC15'])
-pca = PCA(n_components=15)
+pca = PCA(n_components=3)
 principalComponents = pca.fit_transform(x)
-principalComponents = pd.DataFrame(principalComponents, columns = ['PC1', 'PC2', 'PC3', 'PC4', 'PC5', 'PC6', 'PC7', 'PC8', 'PC9', 'PC10', 'PC11', 'PC12', 'PC13', 'PC14', 'PC15'])
+principalComponents = pd.DataFrame(principalComponents, columns = ['PC1', 'PC2', 'PC3'])
 principalComponents['SNP'] = SNP
 principalComponents.to_csv('scaled_PCA_snp_cancers.csv')
 
-objects = ('PC1', 'PC2', 'PC3', 'PC4', 'PC5', 'PC6', 'PC7', 'PC8', 'PC9', 'PC10', 'PC11', 'PC12', 'PC13', 'PC14', 'PC15')
+objects = ('PC1', 'PC2', 'PC3')
 y_pos = np.arange(len(objects))
 performance = pca.explained_variance_ratio_
  

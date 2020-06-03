@@ -39,8 +39,9 @@ plt.suptitle('Merge Distance and Number of Clusters')
 
 plt.show()
 
-k = 8 # determined from the plot
+k = 6 # determined from the plot
 labels = fcluster(Z, k, criterion='maxclust')
 data_columns_extracted["cluster_label"] = labels
+data_columns_extracted["SNP"] = SNP
 
 data_columns_extracted.to_csv('all_snps_cancers_reduced_hierarchical_clustering.csv')

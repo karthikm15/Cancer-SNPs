@@ -17,7 +17,7 @@ kmeans = kmeans.loc[kmeans['SNP'] != 'rs4532479',:]
 df_merge = principalComponents.merge(kmeans, on='SNP')
 df_merge.to_csv('all_snps_cancers_reduced_kmeans_PCA.csv')
 
-plt.xlabel('PC1')
+plt.xlabel('PC1') # x labels
 plt.ylabel('PC2')
 
 plt.scatter(df_merge['PC1'], df_merge['PC2'], c = df_merge['cluster_label'], linewidths = 0, cmap = "Set1", linestyle = 'None')

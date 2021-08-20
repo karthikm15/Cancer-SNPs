@@ -14,7 +14,7 @@ all_snps_associated = unique(all_snps_associated)
 
 all_snps_cancers = data.frame('SNP'=all_snps_associated)
 for (id in cancer_ids) {
-  cancer_name = as.character(ao[ao$id == id,'trait'])
+  cancer_name = as.character(ao[ao$id == id,'trait']) 
   effect_of_snps = extract_outcome_data(all_snps_cancers$SNP, id)
   effect_of_snps = effect_of_snps[, c('SNP', 'beta.outcome', 'se.outcome', 'pval.outcome')] 
   names(effect_of_snps) = c('SNP', paste0('beta.', cancer_name), paste0('se.', cancer_name), paste0('pval.', cancer_name))

@@ -1,5 +1,5 @@
 library(TwoSampleMR)
-ao = available_outcomes()
+ao = available_outcomes() # available outcomes
 #cancer_ids = c('ieu-a-1126', 'ieu-a-1120', 'ukb-d-C_SKIN', 'ukb-d-C_DIGESTIVE_ORGANS', 'ukb-b-12915', 'ieu-a-965', 'ieu-a-1013', 'ukb-d-C_URINARY_TRACT', 'ieu-a-816')
 cancer_ids = c('ieu-a-1128', 'ieu-a-1127', 'ieu-a-1126')
 ao_subset = ao[is.element(ao$id, cancer_ids),]

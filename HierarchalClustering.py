@@ -12,7 +12,7 @@ from scipy.cluster import hierarchy
 from scipy.cluster.hierarchy import fcluster
 
 
-data = pd.read_csv('all_snps_cancers_reduced.csv')
+data = pd.read_csv('all_snps_cancers_reduced.csv') #extracting important columns
 columns_to_extract = [col for col in data.columns if 'beta.' in col]
 SNP = data['SNP']
 data_columns_extracted = data[columns_to_extract]
